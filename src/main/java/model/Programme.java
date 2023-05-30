@@ -12,7 +12,7 @@ public class Programme {
      * Name and id of the programme
      */
     private String name;
-    print int pID;
+    private int pID;
 
     /**
      * Start date of the programme
@@ -42,7 +42,7 @@ public class Programme {
         this.name = name;
     }
 
-    public String getID() {
+    public int getID() {
         return pID;
     }
 
@@ -94,9 +94,41 @@ public class Programme {
      * @return true if the student is successfully enrolled, false otherwise
      */
 
-    public boolean addStudent(Student student){
-    	return false;
-   
+    public boolean addStudent(Student student,Football team) throws IllegalStudentEnrollException
+    {
+        
+        // get current date
+        Date currentDate = new Date();
+
+        // check if date has passed
+        if(currentDate.compareTo(this.getStartDate()) > 0)
+        {
+            return false;
+        }
+
+        
+        // check if student alreay enrolled
+        for(int i = 0; i<enrolled.size(); ++i)
+        {
+            if(enrolled.get(i).getId() == student.getId())
+            {
+                throw new IllegalStudentEnrollException("Student already Enrolled in this programme");
+            }
+        }
+        
+
+        // check program size
+        if(enrolled.size() >= 250)
+        {
+            return false;
+        }
+
+        //All checks pass add student to programme and football team
+        
+        enrolled.add(student);
+        team.addAvailStudent(student);
+        return true;
+
     }
 
 

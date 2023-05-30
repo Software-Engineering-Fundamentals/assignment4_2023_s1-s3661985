@@ -37,7 +37,7 @@ public class Student {
     public double getMarks() {
         return marks;
     }
-
+    
     public String getDepartment() {
         return department;
     }

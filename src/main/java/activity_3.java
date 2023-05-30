@@ -1,11 +1,15 @@
+/* 
 package model;
 
 import java.util.ArrayList;
 import java.util.List;
+*/
 
 /**
  * Employee in an organisation
  */
+
+ /* 
 public class Employee {
     
     private String n1;
@@ -42,7 +46,8 @@ public class Employee {
 	    }
     }
 
-    
+
+
 
     public void assignNewProjects(int ID,  string p) {
         this.p1.add(p);
@@ -50,3 +55,6 @@ public class Employee {
 
 
 }
+
+*/
+
