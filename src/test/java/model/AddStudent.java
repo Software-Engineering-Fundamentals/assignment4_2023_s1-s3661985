@@ -39,7 +39,7 @@ public class AddStudent {
    }
 
     @Test
-    void false_ifOverStartDate() throws IllegalStudentEnrollException
+    void false_ifOverStartDate()
     {   
         // This method test if the Start Date has already passed
 
@@ -53,7 +53,7 @@ public class AddStudent {
 
 
     @Test
-    void exceptionThrown_ifStudentAlreadyEnrolled() throws IllegalStudentEnrollException
+    void exceptionThrown_ifStudentAlreadyEnrolled()
     {
         // This method tests if student is already enrolled and throws exception
 
@@ -70,7 +70,7 @@ public class AddStudent {
 
 
     @Test
-    void false_IfMoreThan250Students() throws IllegalStudentEnrollException
+    void false_IfMoreThan250Students()
     {
         // This method tests if the limit of students has been reached
 
@@ -85,13 +85,17 @@ public class AddStudent {
 
 
     @Test
-    void true_ifallConditionsSasisfied() throws IllegalStudentEnrollException
+    void true_ifallConditionsSasisfied()
     {
         // This method tests if all conditions of new student are correct
         assertEquals(true,newProgramme.addStudent(newStudent, team));
     }
 
 
+    @Test void false_ifStudentIsNull()
+    {
+        assertEquals(false,newProgramme.addStudent(null,team));
+    }
 
 
 }

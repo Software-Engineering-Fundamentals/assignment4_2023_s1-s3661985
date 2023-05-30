@@ -96,6 +96,11 @@ public class Programme {
 
     public boolean addStudent(Student student,Football team) throws IllegalStudentEnrollException
     {
+        if(student == null)
+        {
+            return false;
+        }
+
         
         // get current date
         Date currentDate = new Date();
